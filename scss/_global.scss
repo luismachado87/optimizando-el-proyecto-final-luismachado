@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+body {
+    
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	color: rgb(6, 0, 0);
+	height: 100vh;
+	background-color: rgba(49, 3, 164, 0.824);
+}
+
+.social {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-right: 0.5em;
+	list-style-type: none;
+	
+	li {
+		display: inline;
+		margin: 0.25em;
+	}
+	
+	svg {
+		fill: white;
+		width: 1.75em;
+		height: 1.75em;
+	}
+}
+
+@media only screen and (min-width: 420px) {
+	.social svg {
+		height: 2.25em;
+		width: 2.25em;
+	}
+	.title {
+		font-size: 8em;
+	}
+	.text {
+		font-size: 1.5em;
+	}
+}
+
+.text {
+	font-size: 1.25em;
+}
+
+@media only screen and (min-width: 420px) {
+	.social svg {
+		height: 2.25em;
+		width: 2.25em;
+	}
+	.title {
+		font-size: 8em;
+	}
+	.text {
+		font-size: 1.5em;
+	}
+}
+// Variables
+
+$font-p: 1.8rem;
+$font-h1: 3.0rem;
+$font-h2: 2.4rem;
+$font-h3: 2.0rem;
+
+//mixins 
+@mixin caja-flex($principal, $cruzado, $wrap){
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+@function font-calc($size, $type){
+
+    $font: 16;
+
+    @if $type ==h1{
+        $font: ($size + 0.2*$size);
+    }
+
+    @if $type ==h2{
+        $font: ($size + 0.1*$size);
+    }
+
+    @else{
+        $font: 16;
+    }
+
+    @return $font + px;
+
+}
+
